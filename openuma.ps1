@@ -7,18 +7,18 @@ $fail = 1;
 Start-Sleep -Seconds $stime;
 
 while($punished -lt 1){
-# ƒEƒ}–º‚ÌƒvƒƒZƒX‚ªæ“¾o—ˆ‚½‚çDMMGameplayer‚ğI—¹‚³‚¹‚é
+# ã‚¦ãƒå¨˜ã®ãƒ—ãƒ­ã‚»ã‚¹ãŒå–å¾—å‡ºæ¥ãŸã‚‰DMMGameplayerã‚’çµ‚äº†ã•ã›ã‚‹
     if((Get-Process | Out-String -Stream | Select-String -Pattern "umamusume" | Measure-Object).Count -ge 1){
         $buf = Get-WmiObject Win32_Process -Filter "Name = 'DMMGamePlayer.exe'"
         $buf.Terminate();
         echo "Punished!!!!!!!!!!!!!!!!!!!!!!!!"
         $punished = 1;
     }elseif($fail -gt 10){
-    # 10‰ñ‚Å¸”s”»’è
-    echo "‹N“®¸”sBƒXƒNƒŠƒvƒg‚ğI—¹‚µ‚Ü‚·B"
+    # 10å›ã§å¤±æ•—åˆ¤å®š
+    echo "èµ·å‹•å¤±æ•—ã€‚ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’çµ‚äº†ã—ã¾ã™ã€‚"
     exit;
     }else{
-    echo "$fail ‰ñ–Ú‚ÌÀs‚É¸”sB$stime •bŒã‚ÉÄÀs‚µ‚Ü‚·..."
+    echo "$fail å›ç›®ã®å®Ÿè¡Œã«å¤±æ•—ã€‚$stime ç§’å¾Œã«å†å®Ÿè¡Œã—ã¾ã™..."
     $fail++;
     Start-Sleep -Seconds $stime;
     }
