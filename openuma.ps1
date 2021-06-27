@@ -1,6 +1,5 @@
 Start-Process "dmmgameplayer://umamusume/cl/general/umamusume"
 
-
 $stime = 10;
 $punished = 0;
 $fail = 1;
@@ -15,10 +14,12 @@ while($punished -lt 1){
         echo "Punished!!!!!!!!!!!!!!!!!!!!!!!!"
         $punished = 1;
     }elseif($fail -gt 10){
+    # 10回で失敗判定
     echo "起動失敗。スクリプトを終了します。"
     exit;
     }else{
-    echo "$fail 回目の実行に失敗。秒後に再実行します..."
+    echo "$fail 回目の実行に失敗。$stime 秒後に再実行します..."
+    $fail++;
     Start-Sleep -Seconds $stime;
     }
 }
