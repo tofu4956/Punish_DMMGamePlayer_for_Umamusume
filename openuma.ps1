@@ -1,4 +1,4 @@
-Start-Process "dmmgameplayer://umamusume/cl/general/umamusume"
+﻿Start-Process "dmmgameplayer://umamusume/cl/general/umamusume"
 
 $stime = 10;
 $punished = 0;
